@@ -359,3 +359,107 @@ a.demo--current {
 	background-size: 300px;
 	opacity: 0.7;
 } */
+
+#logo {
+	position: relative;
+	
+	z-index: 10;
+}
+.social__nav {
+	display: block;
+	width: 42px;
+	height: 42px;
+	position: relative;
+	z-index: 20;
+	background-color: #ffffff;
+	border-radius: 100%;
+	left: 2px;
+	top: 44px;
+	cursor: pointer;
+	transition: all .3s;
+}
+.social__nav:before {
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 32px;
+	background: #5D5D5D;
+	top: 5px;
+	left: 20px;
+}
+.social__nav:after {
+	content: "";
+	position: absolute;
+	width: 32px;
+	height: 2px;
+	background: #5D5D5D;
+	left: 5px;
+	top: 20px;
+}
+#social__elements {
+	z-index: 3;
+	position: relative;
+	background: rgba(0, 0, 0, 0.6);
+	width: 125px;
+	height: 125px;
+	border-radius: 100%;
+	color: white;
+	top: -40px;
+	left: -40px;
+	overflow: hidden;
+	transition: all .3s;
+	transform: scale(0.5) rotate(270deg);
+}
+
+.a,
+.b,
+.c,
+.d {
+	position: absolute;
+	font-size: 25px;
+	opacity: 0;
+	height: 15px;
+	width: 15px;
+}
+
+.a {
+	top: 5px;
+	left: 50px;
+}
+
+.b {
+	top: 50px;
+	left: 5px;
+}
+
+.c {
+	bottom: 5px;
+	left: 50px;
+}
+
+.d {
+	top: 50px;
+	right: 5px;
+}
+
+.site-links:hover > .social__nav {
+	transform: scale(1);
+  transform: rotate(0);
+}
+
+.site-links:hover > .social__nav span {
+	opacity: 1;
+}
+
+.site-links:hover > .social__nav {
+	transform: rotate(135deg);
+}
+
+.site-links:hover > .social__nav:before, .site-links:hover > .social__nav:after {
+	background: #4C8BCA;
+}
+
+
+.social__nav a:hover > span {
+	color: yellow;
+}

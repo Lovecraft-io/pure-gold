@@ -8,9 +8,14 @@ export default class Header extends Component {
     }
 
     render() {
+
         const social_nav_style = {
             display: 'inline',
             listStyleType: 'none'
+        }
+        const icon_style = {
+            height: '15px',
+            width: '15px'
         }
 
         return (
@@ -29,22 +34,17 @@ export default class Header extends Component {
                 <header className="codrops-header">
                     <div className="site-links">
                         <h1 className="codrops-header__title">JUD NICHOLS</h1>
-                    
-                        <ul className="social__nav" style={social_nav_style}>
-                            <li>
-                                <a href><img src="img/icons/home.svg" alt="" /></a>
-                            </li>
-                            <li>
-                                <a href><img src="img/icons/facebook-circle.svg" alt="" /></a>
-                            </li>
-                            <li>
-                            <a href><img src="img/icons/instagram-circle.svg" alt="" /></a>
-                            </li>
-                            <li>
-                            <a href><img src="img/icons/vimeo-circle.svg" alt="" /></a>
-                            </li>
-                        </ul>
+                        <span className="social_nav"></span>
+                            <div id="social_elements">
+                                <a href><img className="a" src="img/icons/home.svg" alt="" style={icon_style} /></a>
+                                <a href><img className="b" src="img/icons/facebook-circle.svg" alt="" style={icon_style} /></a>
+                                <a href><img className="c" src="img/icons/instagram-circle.svg" alt="" style={icon_style} /></a>
+                                <a href><img className="d" src="img/icons/vimeo-circle.svg" alt="" style={icon_style} /></a>
+                            </div>
                     </div>
+                        
+                    
+                    
                     
                 </header >  
             </div>
