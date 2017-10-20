@@ -57,6 +57,7 @@ a:focus, .fa {
 	position: absolute;
 	top: 10px;
 	left: 10px;
+	width: 400px;
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
@@ -360,18 +361,22 @@ a.demo--current {
 	opacity: 0.7;
 } */
 
-#logo {
+
+.site-links {
 	position: relative;
-	
 	z-index: 10;
+	padding-left: 100px;
 }
+/* site-links === yuvarlak */
+/* carpi === social__nav */
+
 .social__nav {
 	display: block;
 	width: 42px;
 	height: 42px;
 	position: relative;
 	z-index: 20;
-	background-color: #ffffff;
+	
 	border-radius: 100%;
 	left: 2px;
 	top: 44px;
@@ -383,7 +388,7 @@ a.demo--current {
 	position: absolute;
 	width: 2px;
 	height: 32px;
-	background: #5D5D5D;
+	
 	top: 5px;
 	left: 20px;
 }
@@ -392,21 +397,21 @@ a.demo--current {
 	position: absolute;
 	width: 32px;
 	height: 2px;
-	background: #5D5D5D;
+	
 	left: 5px;
 	top: 20px;
 }
 #social__elements {
 	z-index: 3;
 	position: relative;
-	background: rgba(0, 0, 0, 0.6);
-	width: 125px;
-	height: 125px;
+	
+	width: 150px;
+	height: 150px;
 	border-radius: 100%;
 	color: white;
-	top: -40px;
-	left: -40px;
-	overflow: hidden;
+	top: -130px;
+	left: 20px;
+
 	transition: all .3s;
 	transform: scale(0.5) rotate(270deg);
 }
@@ -423,13 +428,13 @@ a.demo--current {
 }
 
 .a {
-	top: 5px;
+	top: -20px;
 	left: 50px;
 }
 
 .b {
 	top: 50px;
-	left: 5px;
+	left: -40px;
 }
 
 .c {
@@ -439,15 +444,15 @@ a.demo--current {
 
 .d {
 	top: 50px;
-	right: 5px;
+	right: -10px;
 }
 
-.site-links:hover > .social__nav {
+.site-links:hover > #social__elements {
 	transform: scale(1);
   transform: rotate(0);
 }
 
-.site-links:hover > .social__nav span {
+.site-links:hover > #social__elements  a {
 	opacity: 1;
 }
 
@@ -455,11 +460,3 @@ a.demo--current {
 	transform: rotate(135deg);
 }
 
-.site-links:hover > .social__nav:before, .site-links:hover > .social__nav:after {
-	background: #4C8BCA;
-}
-
-
-.social__nav a:hover > span {
-	color: yellow;
-}

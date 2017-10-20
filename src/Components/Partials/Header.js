@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 
 export default class Header extends Component {
@@ -34,14 +35,15 @@ export default class Header extends Component {
                 <header className="codrops-header">
                     <div className="site-links">
                         <h1 className="codrops-header__title">JUD NICHOLS</h1>
-                        <span className="social_nav"></span>
-                            <div id="social_elements">
-                                <a href><img className="a" src="img/icons/home.svg" alt="" style={icon_style} /></a>
-                                <a href><img className="b" src="img/icons/facebook-circle.svg" alt="" style={icon_style} /></a>
-                                <a href><img className="c" src="img/icons/instagram-circle.svg" alt="" style={icon_style} /></a>
-                                <a href><img className="d" src="img/icons/vimeo-circle.svg" alt="" style={icon_style} /></a>
+                        <span className="social__nav"></span>
+                            <div id="social__elements">
+                                <Link to='/' className="a"><img src="img/icons/home.svg" alt="" style={icon_style} /></Link>
+                                <a to='' className="b"><img src="img/icons/facebook-circle.svg" alt="" style={icon_style} /></a>
+                                <a to='' className="c"><img src="img/icons/instagram-circle.svg" alt="" style={icon_style} /></a>
+                                <a to='' className="d"><img src="img/icons/vimeo-circle.svg" alt="" style={icon_style} /></a>
                             </div>
                     </div>
+               
                         
                     
                     
