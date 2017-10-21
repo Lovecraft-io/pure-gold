@@ -15,6 +15,8 @@ const clientSecret = '4ddwI9d7nHrcRcPlM5UE4YyNTZ9yjCCthnz+9CwY4Hdg5JkaYrOWRu24kg
 const accessToken = '827ba89c1ca4647189da72d793d669b5';
 
 
+const isPublic = (video) => video.privacy.view != 'nobody' && video.privacy.view != 'password'
+
 
 class App extends Component {
   constructor(props) {
@@ -23,31 +25,34 @@ class App extends Component {
     this.state = {
       removeLoader: false,
       videos: []
-
     }
-
   }
-
   componentWillMount() {
-    const lib = new Vimeo(clientID, clientSecret, accessToken);
-    let videos = [];
-    const isPublic = (video) => video.privacy.view != 'nobody' && video.privacy.view != 'password'
 
-    lib.request({
-        path: '/me/videos'
-    }, (err, body, status_code, headers) => {
-        if (!err) {
-            videos = body.data.filter((video) => isPublic(video))
-            console.log(videos)
+    if (localStorage.getItem('videos')){
+      let videos = JSON.parse(localStorage.getItem('videos'))
+      videos = videos.filter(video => isPublic(video))
+      console.log(videos)
+      this.setState({ videos: videos })
 
-            // localStorage.setItem('videos', JSON.stringify(videos))
-            this.setState({ videos: videos })
-            
-        } else {
-            console.log(err);
-        }
-
-    })
+    } else {
+      const lib = new Vimeo(clientID, clientSecret, accessToken);
+      let videos = [];
+      
+      lib.request({
+          path: '/me/videos'
+      }, (err, body, status_code, headers) => {
+          if (!err) {
+              videos = body.data.filter((video) => isPublic(video))
+              localStorage.setItem('videos', JSON.stringify(videos))
+              console.log(localStorage.getItem('videos'))
+              this.setState({ videos: videos })
+          } else {
+              console.log(err);
+          }
+  
+      })
+    }
   }
   componentDidMount() {
 

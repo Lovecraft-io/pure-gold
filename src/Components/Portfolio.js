@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-// import imagesLoaded from 'react-images-loaded'
-// import anime from 'animejs'
-// import scrollMonitor from 'scrollmonitor'
 import Vimeo from 'react-vimeo'
 
 
@@ -38,7 +35,7 @@ export default class Portfolio extends Component {
 		const videos = this.props.videos.map(video => {
 			let bg_image
 			if (video.pictures){
-				bg_image =  video.pictures.sizes[9].link
+				bg_image =  video.pictures.sizes[5].link
 				let bg_style = {
 					backgroundImage: `url(${bg_image})`
 				}
