@@ -111,6 +111,7 @@ img.video__section_bg {
 }
 .number {
 	position: relative;
+	left: -30px;
  opacity: 1;
  -webkit-transform: translatex(0rem);
  transform: translatex(0rem);
@@ -138,7 +139,7 @@ img.video__section_bg {
 	/* transform: translatex(0rem) rotate(-90deg); */
 	opacity: 1;
 	position: absolute;
-	top: 0;
+	top: -30px;
 	letter-spacing: 2px;
 	color: white;
 	right: 0;
@@ -170,7 +171,7 @@ img.video__section_bg {
 .title__inner,
 .desc,
 .button-wrap {
-	opacity: 0;
+	opacity: 1;
 	-webkit-transform: translatey(2.5rem);
 	transform: translatey(2.5rem);
 	position: relative;
@@ -183,6 +184,7 @@ img.video__section_bg {
 .title__inner {
 	position: relative;
 	display: inline-block;
+	text-align: center;
 }
 
 .title__line:before {
@@ -204,4 +206,7 @@ img.video__section_bg {
 	left: -2rem;
 	height: 2rem;
 	z-index: -1;
+}
+.title__line {
+	position: relative;
 }
