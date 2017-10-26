@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import Vimeo from 'react-vimeo'
+
 import '../css/Portfolio.css'
 // import {Route, Link} from 'react-router-dom'
 import MobilePortfolio from './MobilePortfolio'
-// <Route exact path='/mobile' component={MobilePortfolio} videos={this.state.videos}/>
-// 				<Link to='/mobile'>MObile</Link>
+import Loading from './Partials/Loading'
 
 const Vimeo = require('vimeo').Vimeo;
 const clientID = 'a403a67f112f44d9826223d299688cffcdc4c794'
@@ -22,7 +21,8 @@ export default class Portfolio extends Component {
 
 		this.state = {
 			videos: [],
-			isMobile: false
+			isMobile: false,
+			isLoaded: false
 		}
 
 
@@ -45,7 +45,7 @@ export default class Portfolio extends Component {
 			let videos = JSON.parse(localStorage.getItem('videos'))
 			videos = videos.filter(video => isPublic(video))
 			console.log(videos)
-			this.setState({ videos: videos })
+			this.setState({ videos: videos, isLoaded: true })
 	  
 		  } else {
 			const lib = new Vimeo(clientID, clientSecret, accessToken);
@@ -54,17 +54,21 @@ export default class Portfolio extends Component {
 			lib.request({
 				path: '/me/videos'
 			}, (err, body, status_code, headers) => {
+				console.log(body)
 				if (!err) {
 					videos = body.data.filter((video) => isPublic(video))
 					localStorage.setItem('videos', JSON.stringify(videos))
-					console.log(localStorage.getItem('videos'))
-					this.setState({ videos: videos })
+					this.setState({ videos: videos, isLoaded: true })
 				} else {
 					console.log(err);
 				}
 		
 			})
 		  }
+	}
+	componentDidMount(){
+		console.log(this.props)
+		console.log(this.state)
 	}
 
 
@@ -117,18 +121,25 @@ export default class Portfolio extends Component {
 					)
 			}
 		})
-		if (this.state.isMobile) {
-			return (
-				<MobilePortfolio videos={this.state.videos}/>
-			)
-			
+		if(this.state.isLoaded) {
+			if (this.state.isMobile) {
+				return (
+					<MobilePortfolio videos={this.state.videos}/>
+				)
+				
+			} else {
+				return (
+					<div id="Portfolio">
+						{videos}
+					</div>
+				)
+			}
 		} else {
 			return (
-				<div id="Portfolio">
-					{videos}
-				</div>
+				<Loading />
 			)
 		}
+		
 	}
 
 
