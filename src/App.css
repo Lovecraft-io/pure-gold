@@ -108,11 +108,7 @@ a:focus, .fa {
 	grid-area: tagline;
 	-webkit-writing-mode: vertical-lr;
 	writing-mode: vertical-lr;
-	/* text-align: right;
-	align-self: start;
-	justify-self: end;
-	margin: 0;
-	padding: 0.85em 0; */
+
 	position: absolute;
 	top: 20px; right: 20px;
 }
@@ -309,7 +305,7 @@ a.demo--current {
   background-size: cover;
 }
 
-@media screen and (max-width: 40em) {
+/* @media screen and (max-width: 40em) {
 	.content {
 		--pieces-height: 50vh;
 		height: var(--pieces-height);
@@ -321,7 +317,7 @@ a.demo--current {
 	.page-nav__item {
 		font-size: 6vh;
 	}
-}
+} */
 
 
 /* CANVAS */
@@ -360,15 +356,6 @@ a.demo--current {
 	background-size: 300px;
 	opacity: 0.7;
 } */
-
-
-.site-links {
-	position: relative;
-	z-index: 10;
-	padding-left: 100px;
-}
-/* site-links === yuvarlak */
-/* carpi === social__nav */
 
 .social__nav {
 	display: block;
@@ -460,3 +447,91 @@ a.demo--current {
 	transform: rotate(135deg);
 }
 
+
+
+
+@media screen and (max-width: 768px) {
+	.site-links {
+		
+		padding-left: 0;
+	}
+	.codrops-header {
+		width: auto!important;
+		padding: 1em 1em 4em;
+	}
+	.codrops-header__title {
+		font-size: .5em;
+	}
+	.codrops-header__title::before, .codrops-header__title::after {
+		font-size: 20px;
+	}
+	#social__elements {
+		z-index: 3;
+		position: relative;
+		
+		width: 100px;
+		height: 100px;
+		border-radius: 100%;
+		color: white;
+		top: -130px;
+		left: 20px;
+	
+		transition: all .3s;
+		transform: scale(0.5) rotate(270deg);
+	}
+	.a img,
+	.b img,
+	.c img,
+	.d img {
+	
+		height: 12px!important;
+		width: 12px!important;
+	}
+	.a {
+		top: 10px;
+		left: 25px;
+	}
+	
+	.b {
+		top: 50px;
+		left: -30px;
+	}
+	
+	.c {
+		bottom: -10px;
+		left: 25px;
+	}
+	
+	.d {
+		top: 50px;
+		right: 0;
+	}
+	.a,
+.b,
+.c,
+.d {
+	position: absolute;
+	font-size: 25px;
+	opacity: 0;
+	height: 15px;
+	width: 15px;
+}
+
+.word {
+	margin-top: -200px;
+	font-size: 4vh;
+}
+.page-nav {
+	position: relative!important;
+	height: auto;
+	font-family: var(--content-font);
+	transition: all .2s;
+}
+.page-nav.page-nav--open {
+	transform: translateY(-50%)!important;
+}
+.page-nav__item {
+	font-size: 4vh;
+	
+}
+}

@@ -487,10 +487,7 @@ a:focus {
 	.codrops-header__deco {
 		font-size: 1.25em;
 	}
-	.codrops-header__title {
-		font-size: 5.5em;
-		margin: 0 -4px;
-	}
+
 	.codrops-header__tagline {
 		width: auto;
 	}
