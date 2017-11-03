@@ -13,13 +13,6 @@ const accessToken = '827ba89c1ca4647189da72d793d669b5'
 
 const isPublic = (video) => video.privacy.view != 'nobody' && video.privacy.view != 'password'
 
-{/* <div className="content__slide">
-	<h2 className="title"> <span className="title__line"> <span className="title__inner"></span></span>
-	<span className="title__line"> <span className="title__inner">{video.name}</span></span></h2>
-	<p className="desc">{video.description}</p>
-			
-</div> */}
-
 export default class Portfolio extends Component {
 	constructor(props) {
 		super(props)
@@ -34,7 +27,7 @@ export default class Portfolio extends Component {
 	}
 	static contextTypes = {
         parallaxController: PropTypes.object.isRequired,
-    }
+	}
 	
 	mobileCheck() {
 		let check = false;

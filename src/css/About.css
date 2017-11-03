@@ -41,14 +41,14 @@ a:focus {
 	margin: 0 0 0 215px;
 }
 
-.About .content {
+.About .view  .content {
 	z-index: 1;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	width: 100%;
 	height: 100%;
 	padding: 25px 50px;
-	background: url(../img/bg_lavender.jpg) no-repeat top left;
+	
 	background-size: auto 100%;
 }
 
@@ -61,7 +61,7 @@ a:focus {
 }
 
 
-.About .codrops-header {
+.About .about-header {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -70,7 +70,7 @@ a:focus {
 	text-align: right;
 }
 
-.About .codrops-header__info {
+.About .about-header__info {
 	font-family: 'Fjalla One', sans-serif;
 	font-size: 4em;
 	font-weight: 700;
@@ -81,7 +81,7 @@ a:focus {
 	text-align: right;
 }
 
-.About .codrops-header__info::after {
+.About .about-header__info::after {
 	content: '01';
 	font-family: 'Avenir Next', Avenir, Helvetica, Arial, sans-serif;
 	font-size: 8em;
@@ -95,7 +95,7 @@ a:focus {
 	color: #fff;
 }
 
-.About .codrops-header__deco {
+.About .about-header__deco {
 	font-size: 2em;
 	line-height: 1;
 	padding: 1em 0;
@@ -104,14 +104,14 @@ a:focus {
 	writing-mode: vertical-rl;
 }
 
-.About .codrops-header__title {
+.About .about-header__title {
 	font-size: 8.5em;
 	line-height: 0.8;
 	margin: 0 -7px 0;
 	padding: 0;
 }
 
-.About .codrops-header__tagline {
+.About .about-header__tagline {
 	width: 50%;
 	margin: 0 0 0 auto;
 	padding: 0;
@@ -231,6 +231,7 @@ a:focus {
 	width: 100%;
 	height: 100vh;
 	opacity: 0;
+	transition: all .4s;
 }
 
 .tabscontent__item--current,
@@ -344,13 +345,13 @@ a:focus {
 	background-image: url(../img/bg_yellow.jpg);
 }
 
-.About .codrops-header__info::after {
+.About .about-header__info::after {
 	content: "'17";
 	color: #fff;
 	font-size: 7em;
 }
 
-.About .codrops-header__deco,
+.About .about-header__deco,
 .About a:hover,
 .About a:focus {
 	color: #ff764b;
@@ -394,7 +395,7 @@ a:focus {
 	padding: 0;
 }
 
-.demo-3 .codrops-header {
+.demo-3 .about-header {
 	justify-content: flex-end;
 	align-items: flex-start;
 	width: 100%;
@@ -402,7 +403,7 @@ a:focus {
 	text-align: left;
 }
 
-.demo-3 .codrops-header__title {
+.demo-3 .about-header__title {
 	font-family: 'Poppins', sans-serif;
 	font-size: 7em;
 	line-height: 0.6;
@@ -410,7 +411,7 @@ a:focus {
 	padding: 0.2em 0 0 0;
 }
 
-.demo-3 .codrops-header__tagline {
+.demo-3 .about-header__tagline {
 	font-size: 1.5em;
 	margin: 0.25em 0 0 -0.3em;
 }
@@ -471,7 +472,7 @@ a:focus {
 		flex-direction: column;
 		padding: 10px;
 	}
-	.codrops-header__info {
+	.about-header__info {
 		font-size: 1.15em;
 	}
 	.deco__text,
@@ -484,18 +485,18 @@ a:focus {
 	.codrops-icon {
 		font-size: 1em;
 	}
-	.codrops-header__deco {
+	.about-header__deco {
 		font-size: 1.25em;
 	}
 
-	.codrops-header__tagline {
+	.about-header__tagline {
 		width: auto;
 	}
 	.demos {
 		align-items: flex-start;
 		margin-top: 1em;
 	}
-	.codrops-header__info::after {
+	.about-header__info::after {
 		font-size: 7em;
 	}
 	.poster__box {
@@ -533,19 +534,19 @@ a:focus {
 	.column__title {
 		margin: 1em 0 0;
 	}
-	.demo-3 .codrops-header__title {
+	.demo-3 .about-header__title {
 		font-size: 2em;
 		margin: 0;
 	}
-	.demo-3 .codrops-header__tagline {
+	.demo-3 .about-header__tagline {
 		font-size: 1em;
 		margin-left: 0;
 	}
-	.demo-3 .codrops-header::after {
+	.demo-3 .about-header::after {
 		font-size: 3em;
 		left: 10px;
 	}
-	.demo-3 .codrops-header__deco {
+	.demo-3 .about-header__deco {
 		font-size: 0.85em;
 	}
 }
@@ -575,6 +576,7 @@ a:focus {
 	height: 100%;
 	position: absolute;
 	pointer-events: none;
+	transition: all .4s;
 }
 
 .tabsnav__title {

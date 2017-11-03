@@ -493,7 +493,7 @@ a.demo--current {
 	--content-font: "Cormorant Garamond", sans-serif;
 }
 
-.content {
+#Home .content {
 	--pieces-height: 90vh;
 	height: 100vh;
 	overflow: hidden;
